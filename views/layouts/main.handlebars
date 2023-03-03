@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Boundless Bites</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/jass.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">  
+        
+    </head>
+    <body>
+        <header>
+            <h1>Tech Blog 123</h1>
+        </header>
+        <div class="topnav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/signup">Sign Up</a></li>
+                {{#if logged_in}}
+                <li><a href="#" id="logoutButton" style="color: var(--dark);">Logout</a></li>
+                {{else}}
+                <li><a href="/login">Login</a></li>
+                {{/if}}
+                
+            </ul>
+        </div>
+        <main>
+            <div class="gallery">
+                {{{ body }}}
+            </div>
+        </main>
+    </body>
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+</html>
