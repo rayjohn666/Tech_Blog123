@@ -1,8 +1,8 @@
 const User = require('./User');
-const Restaurant = require('./Restaurant');
+// const Restaurant = require('./Restaurant');
 const Comment = require('./Comment')
 
-Restaurant.hasMany(Comment, {
+User.hasMany(Comment, {
     foreignKey: 'restaurantId',
     onDelete: 'CASCADE'
 })
