@@ -13,14 +13,13 @@
   "author": "Hayden Dillon-Lloyd",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.1.0",
-    "connect-session-sequelize": "^7.1.5",
-    "dotenv": "^16.0.3",
+    "bcrypt": "^4.0.1",
+    "connect-session-sequelize": "^6.1.1",
+    "dotenv": "^8.2.0",
     "express": "^4.18.2",
-    "express-handlebars": "^6.0.7",
+    "express-handlebars": "^3.1.0",
     "express-session": "^1.17.3",
-    "mysql2": "^3.1.0",
-    "sequelize": "^6.28.0",
-    "sqlite3": "^5.1.4"
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.7"
   }
 }
