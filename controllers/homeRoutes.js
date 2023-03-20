@@ -5,9 +5,9 @@ const router = express.Router();
 const bcrypt = require("bcrypt");
 var session = require("express-session");
 
-// router.get('/', (req, res) =>{
-//     res.render('login')
-// });
+router.get('/', (req, res) =>{
+    res.render('login')
+});
 router.get("/signup", (req, res) => {
   res.render("signup", { layout: "main", logged_in: req.session.logged_in });
 });
