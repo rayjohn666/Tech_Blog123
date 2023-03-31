@@ -34,7 +34,7 @@ router.post("/api/users", async (req, res) => {
     req.session.save(() => {
       req.session.logged_in = true;
 
-      res.render("homepage", {
+      res.render("comments", {
         layout: "main",
         logged_in: req.session.logged_in,
       });

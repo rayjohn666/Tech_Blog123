@@ -1,0 +1,30 @@
+<main>
+  {{!-- Display the post content --}}
+  <article class="post">
+    <h2>{{title}}</h2>
+    <p>{{content}}</p>
+  </article>
+
+  {{!-- Display the comments section --}}
+  <section class="comments">
+    <h3>Comments</h3>
+    {{!-- Display the comment form --}}
+    <form id="new-comment-form">
+      <label for="comment-body">Add a comment:</label>
+      <textarea name="comment-body" rows="3" placeholder="Enter your comment here"></textarea>
+      <button type="submit">Post Comment</button>
+    </form>
+
+    {{!-- Display the comments --}}
+    <ul class="comment-list">
+      {{#each comments}}
+        <li>
+          <p>{{this.content}}</p>
+          <small>Posted by {{this.user.username}}</small>
+        </li>
+      {{/each}}
+    </ul>
+  </section>
+</main>
+
+<script src="/js/comments.js"></script>
