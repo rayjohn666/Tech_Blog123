@@ -2,11 +2,11 @@ const express = require("express");
 const User = require("../models/user");
 const router = express.Router();
 // make sure to use this format  for const router
-const bcrypt = require("bcrypt");
-var session = require("express-session");
+// const bcrypt = require("bcrypt");
+// var session = require("express-session");
 
-router.get('/', (req, res) =>{
-    res.render('login')
+router.get("/", (req, res) => {
+  res.render("login");
 });
 router.get("/signup", (req, res) => {
   res.render("signup", { layout: "main", logged_in: req.session.logged_in });
@@ -16,12 +16,6 @@ router.get("/login", (req, res) => {
   res.render("login", { layout: "main", logged_in: req.session.logged_in });
 });
 
-router.get("/disclaimer", (req, res) => {
-  res.render("disclaimer", {
-    layout: "main",
-    logged_in: req.session.logged_in,
-  });
-});
 
 router.post("/api/users", async (req, res) => {
   try {
