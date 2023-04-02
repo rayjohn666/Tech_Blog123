@@ -24,6 +24,12 @@ header h1 {
     color: rgb(134, 198, 171);
 }
 
+a:link {
+    color: rgb(134, 198, 171);
+    background-color: transparent;
+    text-decoration: none;
+}
+
 header h2 {
     margin: 0;
     text-decoration: wavy;
