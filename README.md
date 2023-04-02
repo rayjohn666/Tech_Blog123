@@ -1,4 +1,4 @@
-# E-commerce-back-end
+# Tech-Blog 123
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -14,7 +14,7 @@
 
 ### Installation:
 
-download the github repo, sign into mysql, then npm start in an integrated terminal at the root of the project to get a live server going. Which can be tested in insomnia.
+download the github repo, sign into mysql, then npm start in an integrated terminal at the root of the project to get a live server going. Which can be tested in insomnia. Once server is live you can run locally on port 3006.
 
 
 
@@ -29,7 +29,7 @@ Node express, npm start, and with insomnia.
 
 ## Description:
 
- The server side of a node application that organizes an e commerce pages inventory of products, within their categories, and tags that coincide to products. This project uses, node express, mysql for a database, and insomnia to test the live server.
+ A tech blog application using node, express, mysql for data structure. With users having the ability to sign up, log in, make comments about topics on different things regarding tech and coding.
 
 
 
@@ -40,7 +40,7 @@ Node express, npm start, and with insomnia.
 
 
 * Using insomnia or postman.
-
+* Test and run the server locally.
 
 ### Contributing:
 
