@@ -24,7 +24,7 @@ header h1 {
     color: rgb(134, 198, 171);
 }
 
-a:link {
+a:-webkit-any-link {
     color: rgb(134, 198, 171);
     background-color: transparent;
     text-decoration: none;
@@ -133,11 +133,54 @@ main {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+
+/* comments page styling */
+.comments {
+    background-color: #f5f5f5;
+    box-shadow: 0px 0px 10px rgba(130, 130, 130, 0.432);
+    padding: 20px;
+    border-radius: 50px;
+    border-width: 5px;
+    border-style: double;
+    border-color: #5c5c5c;
+    width: 350px;
+    max-width: 90%;
+    text-align: center;
+    align-content: center;
+    display:grid;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 .page-title {
     font-size: 24px;
     margin-bottom: 20px;
     color: #333;
 }
+
+.comment-button {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+}
+
+.text-area {
+    display: inline-;
+    width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+/*  */
 
 .form-group {
     margin-bottom: 20px;
