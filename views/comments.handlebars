@@ -15,16 +15,32 @@
       <button type="submit" class="comment-button">Post Comment</button>
     </form>
 
-    {{!-- Display the comments --}}
-    <ul class="comment-list">
-      {{#each comments}}
-        <li>
-          <p>{{this.content}}</p>
-          <small>Posted by {{this.user.username}}</small>
-        </li>
-      {{/each}}
-    </ul>
-  </section>
+  <!-- Assuming you have a container with an id of 'commentsContainer' for displaying comments -->
+<div id="commentsContainer">
+  <!-- Loop through the comments data and render each comment using the commentTemplate -->
+  {{#each comments}}
+    <div class="card">
+      <div class="card-header">
+        {{user}}
+      </div>
+      <div class="card-body">
+        <p class="card-text">{{comment}}</p>
+      </div>
+    </div>
+  {{/each}}
+</div>
+
+<!-- Assuming you have a template with an id of 'commentTemplate' for rendering individual comments -->
+<script id="commentTemplate" type="text/x-handlebars-template">
+  <div class="card">
+    <div class="card-header">
+      {{user}}
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{comment}}</p>
+    </div>
+  </div>
+</script>
 </main>
 
 <script src="/js/comments.js"></script>

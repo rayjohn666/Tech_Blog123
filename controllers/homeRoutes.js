@@ -20,6 +20,9 @@ router.get("/comments", (req, res) => {
   res.render("comments", { layout: "main", logged_in: req.session.logged_in });
 });
 
+router.get("/dashboard", (req, res) => {
+  res.render("dashboard", { layout: "main", logged_in: req.session.logged_in });
+});
 
 
 

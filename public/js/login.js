@@ -4,13 +4,7 @@ const loginFormHandler = async (event) => {
     const email = document.querySelector('#email-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
     
-    // const userObject = {
-    //   username: email,
-    //   password: password,
-
-    // }
-
-    // console.log(userObject);
+   
   
     if (email && password) {
       fetch('/api/users/login', {
@@ -27,11 +21,11 @@ const loginFormHandler = async (event) => {
         }
       })
   
-      // if (response.ok) {
-      //   document.location.replace('/');
-      // } else {
-      //   alert('Failed to log in.');
-      // }
+      if (response.ok) {
+        document.location.replace('/');
+      } else {
+        alert('Failed to log in.');
+      }
     }
   };
   

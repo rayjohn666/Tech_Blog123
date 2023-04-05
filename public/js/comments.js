@@ -12,7 +12,7 @@ const commentFormHandler = async (event) => {
   console.log(commentContent);
 
   if (commentContent) {
-    const response = await fetch("/api/comments", {
+    const response = await fetch("/api/commentRoutes", {
       method: "POST",
       body: JSON.stringify({
         postId,
