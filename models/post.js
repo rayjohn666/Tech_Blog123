@@ -6,17 +6,17 @@ class Post extends Model {}
 
 Post.init(
 {
-    id: {
+    Title: {
     type: DataTypes.INTEGER,
     allowNull: false,
     primaryKey: true,
     autoIncrement: true,
     },
-    name: {
+    content: {
     type: DataTypes.STRING,
     allowNull: false,
     },
-    email: {
+    author: {
     type: DataTypes.STRING,
     allowNull: false,
     unique: true,
@@ -24,7 +24,7 @@ Post.init(
         isEmail: true,
     },
     },
-    password: {
+    created_at: {
     type: DataTypes.STRING,
     allowNull: false,
     validate: {
