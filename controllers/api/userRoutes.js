@@ -3,16 +3,18 @@ const router = require("express").Router();
 const bcrypt = require("bcrypt");
 var session = require("express-session");
 
-router.get("/users", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
-    const users = await User.findAll({});
+    const users = await User.findAll({
+      include: [Comment, Post ]
+    });
     res.json(users);
   } catch (err) {
     console.log(err);
   }
 });
 
-router.post("/users", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const dbUserData = await User.create({
       username: req.body.username,
