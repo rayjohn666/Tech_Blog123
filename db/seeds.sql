@@ -1,4 +1,4 @@
-INSERT INTO posts (title, content, author, created_at) VALUES 
+INSERT INTO Post (title, content, author, created_at) VALUES 
 ('Getting Started with Node.js', 'Node.js is a powerful platform for building web applications. In this tutorial, we will walk you through the basics of Node.js and show you how to get started with your first Node.js application.', 'John Doe', '2022-01-01 12:00:00'),
 ('10 Tips for Writing Clean Code', 'Writing clean code is essential for creating maintainable and scalable software. In this article, we will provide you with 10 tips for writing clean code that will help you write better software and make your life as a developer easier.', 'Jane Smith', '2022-01-02 13:00:00'),
 ('Building RESTful APIs with Express.js', 'Express.js is a popular Node.js framework for building web applications and APIs. In this tutorial, we will show you how to use Express.js to build a RESTful API with CRUD functionality.', 'Bob Johnson', '2022-01-03 14:00:00');

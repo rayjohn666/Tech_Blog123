@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
     const postData = await Post.findAll();
     const posts = postData.map((post) => post.get({ plain: true }));
 
-    res.render('homepage', { 
+    res.render('dashboard', { 
       posts,
       logged_in: req.session.logged_in 
     });

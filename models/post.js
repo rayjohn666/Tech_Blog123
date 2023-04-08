@@ -7,7 +7,7 @@ class Post extends Model {}
 Post.init(
 {
     Title: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     allowNull: false,
     primaryKey: true,
     autoIncrement: true,
@@ -21,16 +21,18 @@ Post.init(
     allowNull: false,
     unique: true,
     validate: {
-        isEmail: true,
+        isAuthor: true,
     },
     },
     created_at: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    validate: {
-        len: [8],
-    },
-    },
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: sequelize.NOW,
+        validate: {
+          isDate: true,
+        },
+      }
+      
 },
 
 {
