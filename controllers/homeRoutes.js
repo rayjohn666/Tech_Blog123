@@ -1,6 +1,6 @@
 const express = require("express");
-const User = require("../models/user");
-const Post = require("../models/post");
+const User = require("../models/User");
+const Post = require("../models/Post");
 const router = express.Router();
 // make sure to use this format  for const router
 const bcrypt = require("bcrypt");
