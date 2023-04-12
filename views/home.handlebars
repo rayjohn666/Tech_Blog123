@@ -1,0 +1,15 @@
+{{#extend "main"}}
+
+{{#content "body"}}
+<div class="gallery">
+    {{#each posts}}
+    <div class="post">
+        <h2>{{title}}</h2>
+        <p>{{content}}</p>
+        <p>Written by {{author}} on {{date}}</p>
+    </div>
+    {{/each}}
+</div>
+{{/content}}
+
+{{/extend}}

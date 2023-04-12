@@ -1,0 +1,244 @@
+/* Body styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+  /* Header styles */
+header {
+    background-color: #485274f1;
+    border-style: groove;
+    color: #000000;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    text-decoration: wavy;
+    font-size: 36px;
+    font-style: italic;
+    font-family: fantasy;
+    color: rgb(134, 198, 171);
+}
+
+a:-webkit-any-link {
+    color: rgb(134, 198, 171);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+header h2 {
+    margin: 0;
+    text-decoration: wavy;
+    font-size: 36px;
+    font-style: italic;
+    font-family: fantasy;
+    color: rgb(16, 17, 17);
+}
+  /* Navigation styles */
+.topnav {
+    background-color: #58dee0;
+    overflow: hidden;
+}
+
+.topnav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: left;
+    border-style: hidden;
+    border-style: outset;
+}
+
+.topnav li {
+    display: inline-flex;
+    
+}
+
+.topnav a {
+    display: block;
+    color: #333;
+    text-align: center;
+    font-style: normal;
+    padding: 14px 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: #333
+}
+
+  /* Main styles */
+main {
+    padding: 20px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.gallery img {
+    width: 30%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+  /* Logout button styles */
+#logoutButton {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+#logoutButton:hover {
+    background-color: #d32f2f;
+}
+
+/* login Card  */
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.login-card {
+    background-color: #f5f5f5;
+    box-shadow: 0px 0px 10px rgba(130, 130, 130, 0.432);
+    padding: 20px;
+    border-radius: 50px;
+    border-width: 5px;
+    border-style: double;
+    border-color: #5c5c5c;
+    width: 350px;
+    max-width: 90%;
+    text-align: center;
+    align-content: center;
+    display:grid;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+/* comments page styling */
+.comments {
+    background-color: #f5f5f5;
+    box-shadow: 0px 0px 10px rgba(130, 130, 130, 0.432);
+    padding: 20px;
+    border-radius: 50px;
+    border-width: 5px;
+    border-style: double;
+    border-color: #5c5c5c;
+    width: 350px;
+    max-width: 90%;
+    text-align: center;
+    align-content: center;
+    display:grid;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.page-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.comment-button {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+}
+
+.text-area {
+    display: inline-;
+    width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+/*  */
+
+
+
+/* dashboard page styling */
+
+.dashboard-container {
+    background-color: #f5f5f5;
+    box-shadow: 0px 0px 10px rgba(130, 130, 130, 0.432);
+    padding: 20px;
+    border-radius: 50px;
+    border-width: 5px;
+    border-style: double;
+    border-color: #5c5c5c;
+    width: 350px;
+    max-width: 90%;
+    text-align: center;
+    align-content: center;
+    display:grid;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-input {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0069d9;
+}

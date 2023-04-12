@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Tech Blog 123</title>
-        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/style.css" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,18 +18,21 @@
     </head>
     <body>
         <header>
-            <h1>Tech Blog 123</h1>
+            <h1><a href="https://tech-blog123666.herokuapp.com/">Tech Blog 123</a></h1>
         </header>
         <div class="topnav">
             <ul>
+            
                 <li><a href="/">Home</a></li>
+                <li><a href="/comments">Comments</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                
                 <li><a href="/signup">Sign Up</a></li>
                 {{#if logged_in}}
                 <li><a href="#" id="logoutButton" style="color: var(--dark);">Logout</a></li>
                 {{else}}
                 <li><a href="/login">Login</a></li>
                 {{/if}}
-                
             </ul>
         </div>
         <main>
