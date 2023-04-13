@@ -1,6 +1,7 @@
 const express = require("express");
 const { Comment, User } = require("../../models");
 const router = express.Router();
+const withAuth = require("../../utils/auth")
 
 router.get("/", async (req, res) => {
   try {
@@ -23,7 +24,7 @@ router.get("/", async (req, res) => {
 });
 
 
-router.post("/", async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   try {
     const comment = await Comment.create({
       ...req.body,
