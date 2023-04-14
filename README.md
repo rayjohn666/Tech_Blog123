@@ -32,6 +32,11 @@ Node express, npm start, and with insomnia.
  A tech blog application using node, express, mysql for data structure. With users having the ability to sign up, log in, make comments about topics on different things regarding tech and coding.
 
 
+  <img
+  src="Tech_Blog123/public/images/Screenshot 2023-04-09 at 9.12.18 PM.png"
+  alt="Alt text"
+  title="Optional title"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
 
 
 ### Test:
