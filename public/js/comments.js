@@ -1,13 +1,7 @@
-
-
-// const commentFormHandler = async (event) => {
-document.querySelector('#new-comment-form').addEventListener('submit', event =>{
+const commentFormHandler = async (event) => {
   event.preventDefault();
   const postId = document.querySelector('#comment-box').value;
-  const commentContent = document.querySelector(
-    'textarea[name="comment-body"]'
-
-  ).value;
+  const commentContent = document.querySelector('textarea[name="comment-body"]').value;
   console.log(commentContent);
 
   if (commentContent) {
@@ -20,18 +14,34 @@ document.querySelector('#new-comment-form').addEventListener('submit', event =>{
       headers: {
         "Content-Type": "application/json",
       },
-    }).then(response =>{
-      if (response.ok){
-        document.location.reload();
-      }
-      else {
-      alert(response.statusText);
-    }
-  })
-}});
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          alert(response.statusText);
+        }
+      })
+      .then((data) => {
+        // Log the new comment
+        console.log(data);
 
+        // Get the container for the comments
+        const commentsContainer = document.querySelector("#comments-container");
 
+        // Create a new element for the new comment
+        const commentEl = document.createElement("div");
+        commentEl.classList.add("comment");
+        commentEl.innerHTML = `
+          <p class="comment-content">${data.commentContent}</p>
+          <p class="comment-author">By ${data.username}</p>
+        `;
 
-document
-  .querySelector("#new-comment-form")
-  .addEventListener("submit", commentFormHandler);
+        // Add the new comment to the container
+        commentsContainer.appendChild(commentEl);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+};

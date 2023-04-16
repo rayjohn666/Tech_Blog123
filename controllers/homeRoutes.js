@@ -26,12 +26,13 @@ router.get("/dashboard", (req, res) => {
   res.render("dashboard", { layout: "main", logged_in: req.session.logged_in });
 });
 
-router.get('/', async (req, res) => {
+router.get('/home', async (req, res) => {
   try {
-    const postData = await Post.findAll();
+    const postData = await Post.findAll({
+      include: [User],
+    });
     const posts = postData.map((post) => post.get({ plain: true }));
-
-    res.render('dashboard', { 
+    res.render('home', { 
       posts,
       logged_in: req.session.logged_in 
     });
@@ -39,24 +40,6 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-// get all posts for homepage
-router.get('/', async (req, res) => {
-  try {
-    const postData = await Post.findAll({
-      include: [User],
-    });
-
-    const posts = postData.map((post) => post.get({ plain: true }));
-
-    res.render('all-posts', { posts });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-
-
 
 
 
