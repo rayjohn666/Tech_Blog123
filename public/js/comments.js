@@ -1,6 +1,6 @@
 const commentFormHandler = async (event) => {
   event.preventDefault();
-  const postId = document.querySelector('#comment-box').value;
+  const postId = document.querySelector('input[name="comment-body"]').value;
   // const commentContent = document.querySelector('textarea[name="comment-body"]').value;
   console.log(postId);
 
@@ -42,7 +42,7 @@ const commentFormHandler = async (event) => {
         commentsContainer.appendChild(commentEl);
       })
       .catch((error) => {
-        console.error(error);
+        console.log(error);
       });
   }
 };
