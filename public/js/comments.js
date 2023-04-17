@@ -18,7 +18,7 @@ const commentFormHandler = async (event) => {
       .then((response) => {
         console.log("RESPONSE",response)
         if (response.ok) {
-          return response.json();
+          return _response_;
         } else {
           alert(response.statusText);
         }
@@ -28,7 +28,7 @@ const commentFormHandler = async (event) => {
         console.log(data);
 
         // Get the container for the comments
-        const commentsContainer = document.querySelector("#comments-container");
+        const commentsContainer = document.querySelector("#commentsContainer");
 
         // Create a new element for the new comment
         const commentEl = document.createElement("div");
