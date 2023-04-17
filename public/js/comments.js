@@ -1,21 +1,22 @@
 const commentFormHandler = async (event) => {
   event.preventDefault();
   const postId = document.querySelector('#comment-box').value;
-  const commentContent = document.querySelector('textarea[name="comment-body"]').value;
-  console.log(commentContent);
+  // const commentContent = document.querySelector('textarea[name="comment-body"]').value;
+  console.log(postId);
 
-  if (commentContent) {
-    fetch("/api/commentRoutes", {
+  if (postId) {
+    fetch("/api/comments", {
       method: "POST",
       body: JSON.stringify({
-        postId,
-        commentContent,
+        postId
+        
       }),
       headers: {
         "Content-Type": "application/json",
       },
     })
       .then((response) => {
+        console.log("RESPONSE",response)
         if (response.ok) {
           return response.json();
         } else {
@@ -45,3 +46,5 @@ const commentFormHandler = async (event) => {
       });
   }
 };
+
+document.getElementById("post").addEventListener("click", commentFormHandler);

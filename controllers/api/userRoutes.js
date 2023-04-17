@@ -6,7 +6,7 @@ var session = require("express-session");
 router.get("/", async (req, res) => {
   try {
     const users = await User.findAll({
-      include: [Comment, Post ]
+      //include: [Comment, Post ]
     });
     res.json(users);
   } catch (err) {
@@ -14,28 +14,29 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
-  try {
-    const dbUserData = await User.create({
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.password,
-    });
+// router.post("/", async (req, res) => {
+//   try {
+//     const dbUserData = await User.create({
+//       username: req.body.username,
+//       email: req.body.email,
+//       password: req.body.password,
+//     });
 
     // res.render("comments", { layout: "main", logged_in: req.session.logged_in });
-    req.session.save(() => {
-      req.session.logged_in = true;
+//     req.session.save(() => {
+//       req.session.logged_in = true;
+//       req.session.user_id = dbUserData.id;
 
-      res.render("comments", {
-        layout: "main",
-        logged_in: req.session.logged_in,
-      });
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+//       res.render("comments", {
+//         layout: "main",
+//         logged_in: req.session.logged_in,
+//       });
+//     });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 router.post("/", async (req, res) => {
   try {
@@ -53,7 +54,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.post("/login", async (req, res) => {
+router.post("/login1", async (req, res) => {
   try {
     const dbUserData = await User.findOne({
       where: {
@@ -91,18 +92,11 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.post("/logout", (req, res) => {
-  if (req.session.logged_in) {
-    req.session.destroy(() => {
-      res.render("homepage", { layout: "main", logged_in: false });
-    });
-  } else {
-    res.status(404).end();
-  }
-});
+
 
 router.post("/login", async (req, res) => {
   try {
+    console.log("LOGIN:", req.body);
     const dbUserData = await User.findOne({
       where: {
         email: req.body.email,
@@ -117,22 +111,23 @@ router.post("/login", async (req, res) => {
     }
 
     const validPassword = await dbUserData.checkPassword(req.body.password);
-
+    console.log("validPassword",validPassword)
     if (!validPassword) {
       res
         .status(400)
         .json({ message: "Incorrect email or password. Please try again!" });
       return;
     }
+   // req.session.user=req.body.email;
+   
+
 
     req.session.save(() => {
       req.session.logged_in = true;
 
-      res.render("homepage", {
-        layout: "main",
-        logged_in: req.session.logged_in,
-      });
+      res.send({ok:true})
     });
+    
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -140,9 +135,11 @@ router.post("/login", async (req, res) => {
 });
 
 router.post("/logout", (req, res) => {
+  console.log("LOGOUT", req.session.logged_in);
   if (req.session.logged_in) {
     req.session.destroy(() => {
-      res.render("homepage", { layout: "main", logged_in: false });
+      console.log("DESTROYED")
+      res.send({ok:true})
     });
   } else {
     res.status(404).end();

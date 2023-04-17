@@ -7,6 +7,7 @@ const loginFormHandler = async (event) => {
    
   
     if (email && password) {
+      console.log ("cleint login ", email, password);
       fetch('/api/users/login', {
         method: 'POST',
         body: JSON.stringify({email, password}),
@@ -14,18 +15,20 @@ const loginFormHandler = async (event) => {
       })
 
       .then(res => {
+        console.log(res);
         if (res.ok) {
+          alert("Logged in Successfully");
           document.location.replace('/');
         } else {
           alert('Failed to log in.');
         }
       })
   
-      if (response.ok) {
-        document.location.replace('/');
-      } else {
-        alert('Failed to log in.');
-      }
+      // if (response.ok) {
+      //   document.location.replace('/');
+      // } else {
+      //   alert('Failed to log in.');
+      // }
     }
   };
   
