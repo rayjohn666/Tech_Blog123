@@ -18,7 +18,7 @@ const commentFormHandler = async (event) => {
       .then((response) => {
         console.log("RESPONSE",response)
         if (response.ok) {
-          return _response_;
+          return response;
         } else {
           alert(response.statusText);
         }
